@@ -13,3 +13,6 @@ def search():
         if list[i] not in filenames:
             print(list[i]+" is not submit")
     f.close()
+
+#docx -> pdf변환
+#pdf 페이지 merge
