@@ -1,0 +1,15 @@
+import os
+
+
+def search():
+
+    f = open('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/리스트.txt', 'r')
+    list = f.read().split('\n')
+    print(list)
+    filenames = os.listdir('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/file')
+    print(filenames)
+
+    for i in range(0, len(list)):
+        if list[i] not in filenames:
+            print(list[i]+" is not submit")
+    f.close()
