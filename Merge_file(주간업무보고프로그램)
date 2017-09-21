@@ -15,4 +15,24 @@ def search():
     f.close()
 
 #docx -> pdf변환
+def convert():
+#    doc = Document('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/file/week.docx')
+    #document.save("test12.pdf")
+#    try:
+#        word = client.DispatchEx("/file/week.docx")
+ #       new_name = doc.replace(".docx", r".pdf")
+  #      worddoc = word.Documents.Open(doc)
+   #     worddoc.SaveAs(new_name, FileFormat=17)
+    #    worddoc.Close()
+#    except Exception as e:
+ #       return e
+  #  finally:
+   #     doc.close()
+    #    word.Quit()
+    word = comtypes.client.CreateObject('Word.Application')
+    doc = word.Documents.Open(in_file)
+    doc.SaveAs(out_file, FileFormat=wdFormatPDF)
+    doc.Close()
+    word.Quit()
+    
 #pdf 페이지 merge
