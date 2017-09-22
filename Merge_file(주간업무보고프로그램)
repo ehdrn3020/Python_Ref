@@ -1,9 +1,12 @@
 import os
 from docx import Document
 import comtypes.client
+from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
 
 files = ['D:\Projects/file\week1.docx',
          'D:\Projects/file\week2.docx']
+pfiles = ['D:\Projects/file\merged.pdf',
+         'D:\Projects/file\merged2.pdf']
 
 def search():
 
@@ -27,3 +30,9 @@ def convert(files):
     word.Quit()
     
 #pdf 페이지 merge
+def adding(pfiles):
+    merger = PdfFileMerger()
+    for filename in pfiles:
+        merger.append(PdfFileReader(filename), 'rb')
+    
+    merger.write('D:\Project/file/document-output.pdf')
