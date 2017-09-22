@@ -1,12 +1,16 @@
 import os
+from docx import Document
+import comtypes.client
 
+files = ['D:\Projects/file\week1.docx',
+         'D:\Projects/file\week2.docx']
 
 def search():
 
     f = open('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/리스트.txt', 'r')
     list = f.read().split('\n')
     print(list)
-    filenames = os.listdir('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/file')
+    filenames = os.listdir('D:\Project/file')
     print(filenames)
 
     for i in range(0, len(list)):
@@ -15,23 +19,10 @@ def search():
     f.close()
 
 #docx -> pdf변환
-def convert():
-#    doc = Document('D:\Pycharm\PyCharm Community Edition 2017.2.2\Project/file/week.docx')
-    #document.save("test12.pdf")
-#    try:
-#        word = client.DispatchEx("/file/week.docx")
- #       new_name = doc.replace(".docx", r".pdf")
-  #      worddoc = word.Documents.Open(doc)
-   #     worddoc.SaveAs(new_name, FileFormat=17)
-    #    worddoc.Close()
-#    except Exception as e:
- #       return e
-  #  finally:
-   #     doc.close()
-    #    word.Quit()
+def convert(files):
     word = comtypes.client.CreateObject('Word.Application')
-    doc = word.Documents.Open(in_file)
-    doc.SaveAs(out_file, FileFormat=wdFormatPDF)
+    doc = word.Documents.Open(files[1])
+    doc.SaveAs('D:\Project/file/merged.pdf', FileFormat=17)
     doc.Close()
     word.Quit()
     
