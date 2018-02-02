@@ -1,0 +1,5 @@
+#Comfile
+$ cd /usr/local/src/Python-2.7.x
+$ ./configure
+$ make
+$ make altinstall
