@@ -1,19 +1,6 @@
 #!/bin/python3
 
-import math
 import os
-import random
-import re
-import sys
-
-# https://www.hackerrank.com/challenges/strong-password/problem?isFullScreen=true
-# Complete the 'minimumNumber' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER n
-#  2. STRING password
-#
 
 def minimumNumber(n, password):
     condition = ["0123456789",
