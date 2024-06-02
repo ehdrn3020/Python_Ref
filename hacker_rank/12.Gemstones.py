@@ -17,6 +17,7 @@ def gemstones(arr):
     # 나머지 문자열 집합과의 교집합을 구함
     for string in arr[1:]:
         common_chars &= set(string)
+        # OR common_chars.intersection(set(string))
     return len(list(common_chars))
 
 if __name__ == '__main__':
