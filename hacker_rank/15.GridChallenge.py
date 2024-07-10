@@ -6,16 +6,20 @@ import random
 import re
 import sys
 
-#
-# Complete the 'gridChallenge' function below.
-#
-# The function is expected to return a STRING.
-# The function accepts STRING_ARRAY grid as parameter.
+# https://www.hackerrank.com/challenges/grid-challenge/problem?isFullScreen=true
+
+#- 행과 열을 바꾸는 작업을 전치(transpose)
+#- `zip(*grid)`는 `grid`의 각 요소를 개별 인자로 풀어서 전달
+#- `*` 연산자는 리스트의 각 요소를 풀어서 개별 인자로 전달하는 역할#
 #
 
 def gridChallenge(grid):
+    # ['eba'] -> ['e','b','a'] 변환
     for i in range(len(grid)):
         grid[i] = sorted(list(grid[i]))
+    # 전치 작업을 실행
+    # grid = ["eba", "fgh", "olm"]
+    # [('e', 'f', 'o'), ('b', 'g', 'l'), ('a', 'h', 'm')]
     for x in list(zip(*grid)):
         if list(x) != sorted(x):
             return "NO"
